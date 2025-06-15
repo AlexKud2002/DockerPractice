@@ -1,0 +1,23 @@
+reporting-disabled = true
+bind-address = "127.0.0.1:8088"
+
+[meta]
+  dir = "/var/lib/influxdb/meta"
+
+[data]
+  dir = "/var/lib/influxdb/data"
+  wal-dir = "/var/lib/influxdb/wal"
+  trace-logging-enabled = false
+
+[http]
+  enabled = true
+  bind-address = ":8086"
+  auth-enabled = true
+  log-enabled = true
+  write-tracing = false
+  pprof-enabled = false
+  https-enabled = false
+
+[logging]
+  level = "info"
+  file = "stderr"
