@@ -34,7 +34,7 @@ docker push aleksandr/sensor-sim:latest
 Каждый контейнер имеет свои env-переменные: SENSOR_TYPE, SENSOR_NAME и т.д.<br>
 Получаем такую картину:
 
-(https://github.com/AlexKud2002/DockerPractice/blob/master/sensors.jpg)
+!!!скрин (sensors)(https://github.com/AlexKud2002/DockerPractice/blob/master/sensors.jpg)
 
 ## Настройка vmB (gateway) - MQTT Broker
 1. Создаём папку для MQTT Broker (`/mosquitto`).
