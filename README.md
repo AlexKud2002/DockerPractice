@@ -1,21 +1,3 @@
-# Отчёт по работе №2: Практика Docker
-**Цель:** создать систему мониторинга системы датчиков с использованием Docker, Mosquitto, InfluxDB, Telegraf и Grafana на трёх виртуальных машинах (далее ВМ).
-
-## Подготовка ВМ
-1. Взяты три ВМ из работы №1 (предварительно настроены в формате client, server, gateway).
-2. Необходимо установить на каждую ВМ Docker и Docker Compose посредством:
-```shell
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y docker.io
-sudo systemctl enable docker
-sudo systemctl start docker
-docker --version
-sudo usermod -aG docker $USER
-sudo apt install -y docker-compose
-docker-compose --version
-```
-
 ## Настройка vmA (client) - Система сенсоров
 1. Создаём папку для приложения (`/sensor-sim`).
 2. Далее подготавливаем файлы самого приложения:
@@ -34,18 +16,18 @@ docker push aleksandr/sensor-sim:latest
 Каждый контейнер имеет свои env-переменные: SENSOR_TYPE, SENSOR_NAME и т.д.<br>
 Получаем такую картину:
 
-!!!скрин (sensors)(https://github.com/AlexKud2002/DockerPractice/blob/master/sensors.jpg)
+[https://github.com/AlexKud2002/DockerPractice/blob/master/sensors.jpg]
 
 ## Настройка vmB (gateway) - MQTT Broker
 1. Создаём папку для MQTT Broker (`/mosquitto`).
 2. Далее подготавливаем конфиг и `docker-compose.yml`
 3. Также запускаем контейнер и проверяем открытость порта 1883:
 
-(https://github.com/AlexKud2002/DockerPractice/blob/master/mqtt_status.jpg)
+!!! скрин (mqtt_status)
 
 В MQTT Explorer можно увидеть, что значения с сенсоров поступают корректно:
 
-(https://github.com/AlexKud2002/DockerPractice/blob/master/mqtt_explorer.jpg)
+!!!скрин (mqtt_explorer)
 
 ## Настройка vmC (server) - Мониторинг
 
@@ -95,7 +77,7 @@ CREATE USER telegraf WITH PASSWORD 'telegraf' WITH ALL PRIVILEGES
 4. JSON созданного дашборда экспортируем и сохраняем в `.../grafana/provisioning/dashboards/dashboard.json`.
 5. Перезапускаем контейнер с **Grafana**.
 
-(https://github.com/AlexKud2002/DockerPractice/blob/master/server.jpg)
+!!!скрин (server)
 
 ## Тестирование
 
@@ -104,7 +86,7 @@ CREATE USER telegraf WITH PASSWORD 'telegraf' WITH ALL PRIVILEGES
 
 Финальные результаты работы:
 
-(https://github.com/AlexKud2002/DockerPractice/blob/master/grafana.jpg)
+!!!скрин (grafana)
 
 Представленные скриншоты подтверждают работоспособность системы.
 Все необходимые файлы приложены в репозитории.
