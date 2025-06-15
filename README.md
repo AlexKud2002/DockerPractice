@@ -34,18 +34,18 @@ docker push aleksandr/sensor-sim:latest
 Каждый контейнер имеет свои env-переменные: SENSOR_TYPE, SENSOR_NAME и т.д.<br>
 Получаем такую картину:
 
-!!!скрин (sensors)
+(https://github.com/AlexKud2002/DockerPractice/blob/master/sensors.jpg)
 
 ## Настройка vmB (gateway) - MQTT Broker
 1. Создаём папку для MQTT Broker (`/mosquitto`).
 2. Далее подготавливаем конфиг и `docker-compose.yml`
 3. Также запускаем контейнер и проверяем открытость порта 1883:
 
-!!! скрин (mqtt_status)
+(https://github.com/AlexKud2002/DockerPractice/blob/master/mqtt_status.jpg)
 
 В MQTT Explorer можно увидеть, что значения с сенсоров поступают корректно:
 
-!!!скрин (mqtt_explorer)
+(https://github.com/AlexKud2002/DockerPractice/blob/master/mqtt_explorer.jpg)
 
 ## Настройка vmC (server) - Мониторинг
 
@@ -95,7 +95,7 @@ CREATE USER telegraf WITH PASSWORD 'telegraf' WITH ALL PRIVILEGES
 4. JSON созданного дашборда экспортируем и сохраняем в `.../grafana/provisioning/dashboards/dashboard.json`.
 5. Перезапускаем контейнер с **Grafana**.
 
-!!!скрин (server)
+(https://github.com/AlexKud2002/DockerPractice/blob/master/server.jpg)
 
 ## Тестирование
 
@@ -104,7 +104,7 @@ CREATE USER telegraf WITH PASSWORD 'telegraf' WITH ALL PRIVILEGES
 
 Финальные результаты работы:
 
-!!!скрин (grafana)
+(https://github.com/AlexKud2002/DockerPractice/blob/master/grafana.jpg)
 
 Представленные скриншоты подтверждают работоспособность системы.
 Все необходимые файлы приложены в репозитории.
