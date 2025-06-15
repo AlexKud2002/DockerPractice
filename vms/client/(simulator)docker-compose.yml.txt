@@ -1,0 +1,67 @@
+version: '3.3'
+
+services:
+  sensor1:
+    build: .
+    environment:
+      SENSOR_TYPE: temperature
+      SENSOR_NAME: temp_1
+      INTERVAL: 3
+      BROKER_HOST: 192.168.0.150
+    networks:
+      - default
+
+  sensor2:
+    build: .
+    environment:
+      SENSOR_TYPE: pressure
+      SENSOR_NAME: pressure_1
+      INTERVAL: 4
+      BROKER_HOST: 192.168.0.150
+    networks:
+      - default
+
+  sensor3:
+    build: .
+    environment:
+      SENSOR_TYPE: humidity
+      SENSOR_NAME: hum_1
+      INTERVAL: 5
+      BROKER_HOST: 192.168.0.150
+    networks:
+      - default
+
+  sensor4:
+    build: .
+    environment:
+      SENSOR_TYPE: current
+      SENSOR_NAME: curr_1
+      INTERVAL: 2
+      BROKER_HOST: 192.168.0.150
+    networks:
+      - default
+
+  sensor5:
+    build: .
+    environment:
+      SENSOR_TYPE: temperature
+      SENSOR_NAME: temp_2
+      INTERVAL: 3
+      BROKER_HOST: 192.168.0.150
+    networks:
+      - default
+
+  sensor6:
+    build: .
+    environment:
+      SENSOR_TYPE: pressure
+      SENSOR_NAME: pressure_2
+      INTERVAL: 6
+      BROKER_HOST: 192.168.0.150
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: iot_net
