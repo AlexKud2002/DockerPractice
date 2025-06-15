@@ -22,11 +22,11 @@ docker push aleksandr/sensor-sim:latest
 2. Далее подготавливаем конфиг и `docker-compose.yml`
 3. Также запускаем контейнер и проверяем открытость порта 1883:
 
-!!! скрин (mqtt_status)
+![lA](https://github.com/AlexKud2002/DockerPractice/blob/master/mqtt_status.jpg)
 
 В MQTT Explorer можно увидеть, что значения с сенсоров поступают корректно:
 
-!!!скрин (mqtt_explorer)
+![lA](https://github.com/AlexKud2002/DockerPractice/blob/master/mqtt_explorer.jpg)
 
 ## Настройка vmC (server) - Мониторинг
 
@@ -76,7 +76,7 @@ CREATE USER telegraf WITH PASSWORD 'telegraf' WITH ALL PRIVILEGES
 4. JSON созданного дашборда экспортируем и сохраняем в `.../grafana/provisioning/dashboards/dashboard.json`.
 5. Перезапускаем контейнер с **Grafana**.
 
-!!!скрин (server)
+![lA](https://github.com/AlexKud2002/DockerPractice/blob/master/server.jpg)
 
 ## Тестирование
 
@@ -85,7 +85,7 @@ CREATE USER telegraf WITH PASSWORD 'telegraf' WITH ALL PRIVILEGES
 
 Финальные результаты работы:
 
-!!!скрин (grafana)
+![lA](https://github.com/AlexKud2002/DockerPractice/blob/master/grafana.jpg)
 
 Представленные скриншоты подтверждают работоспособность системы.
 Все необходимые файлы приложены в репозитории.
